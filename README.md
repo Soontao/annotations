@@ -1,2 +1,3 @@
-# annotations
-annotations of typescript
+# Annotations
+
+Annotations of typescript

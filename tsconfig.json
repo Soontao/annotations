@@ -1,0 +1,16 @@
+{
+    "newLine": "LF",
+    "compilerOptions": {
+        "experimentalDecorators": true,
+        "outDir": "lib",
+        "charset": "utf-8",
+        "emitDecoratorMetadata": true,
+        "declaration": true,
+        "lib": [
+            "es6"
+        ]
+    },
+    "exclude": [
+        "node_modules"
+    ]
+}

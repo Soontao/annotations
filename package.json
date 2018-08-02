@@ -1,0 +1,66 @@
+{
+  "name": "annotations",
+  "version": "1.0.0",
+  "description": "annotations of typescript",
+  "main": "lib",
+  "typings": "lib/index.d.ts",
+  "scripts": {
+    "clean": "rimraf lib",
+    "build": "npm run clean && tsc",
+    "test": "jest",
+    "test:watch": "npm test -- --watch",
+    "coverage": "npm test -- --coverage --no-cache",
+    "coverage:watch": "npm run coverage -- --watch",
+    "release": "standard-version --no-verify && git push --follow-tags origin master && npm publish",
+    "prepare": "npm run build && npm test"
+  },
+  "dependencies": {
+    "reflect-metadata": "^0.1.12"
+  },
+  "devDependencies": {
+    "@types/jest": "^20.0.7",
+    "@types/node": "^8.0.25",
+    "jest": "^20.0.4",
+    "jest-cli": "^20.0.0",
+    "pre-commit": "^1.2.2",
+    "rimraf": "^2.6.1",
+    "standard-version": "^4.2.0",
+    "ts-jest": "^20.0.10",
+    "ts-loader": "^2.3.3",
+    "tslint": "^5.6.0",
+    "tslint-loader": "^3.5.3",
+    "typescript": "3.0.1"
+  },
+  "jest": {
+    "transform": {
+      ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "mapCoverage": true,
+    "collectCoverageFrom": [
+      "src/**/*.ts"
+    ],
+    "coveragePathIgnorePatterns": [
+      "/tests/",
+      "/node_modules/",
+      "/src/cli",
+      "/src/generator"
+    ],
+    "testEnvironment": "node",
+    "testRegex": "tests/.*\\.spec\\.ts$",
+    "moduleFileExtensions": [
+      "ts",
+      "js",
+      "json"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Soontao/annotations.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Soontao/annotations/issues"
+  },
+  "homepage": "https://github.com/Soontao/annotations#readme"
+}
