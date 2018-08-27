@@ -1,21 +1,23 @@
 import "jest"
 import "reflect-metadata"
-import { ClassAnnotation, getClassAnnotationMetadata } from "../src";
+import { Controller, GetControllerAnnotation } from "./resource/annotations/Controller";
 
 describe('basic test suite', () => {
 
-  it('should get metadata', () => {
+  it('should get class annotation', () => {
 
     const opt = { name: "value" }
 
-    const Controller = ClassAnnotation("Controller");
-    const ControllerGet = getClassAnnotationMetadata("Controller")
 
     @Controller(opt)
     class TestController { }
 
-    expect(ControllerGet(TestController)).toEqual(opt)
+    expect(GetControllerAnnotation(TestController)).toEqual(opt)
 
   });
+
+
+
+
 
 });
